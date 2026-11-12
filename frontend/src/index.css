@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-surface text-charcoal font-sans antialiased; }
+  h1, h2, h3 { @apply text-ink; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-forest; }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-line bg-white shadow-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-forest text-white hover:bg-deep; }
+  .btn-outline { @apply btn border border-charcoal/30 bg-white text-charcoal hover:bg-tint; }
+  .input { @apply w-full rounded-xl border border-line bg-white px-3 py-2.5 text-sm text-ink placeholder:text-sage focus:border-forest focus:outline-none focus:ring-2 focus:ring-forest/20; }
+  .label { @apply mb-1.5 block text-sm font-medium text-charcoal; }
+}
+
+/* Leaflet needs an explicit height */
+.leaflet-container { height: 100%; width: 100%; border-radius: 1rem; }
